@@ -1,0 +1,80 @@
+MODULE - III
+---------------
+React
+-------
+- React is a popular open-source web application library.
+- built and maintained by facebook.
+
+Features of React
+----------
+1) used to built frontend(UI)
+2) react is based on js
+3) used to  built SPA(Single page Application) - only one page loads into browser(index.html)
+4) Declarative Application - directly not alter DOM
+  - VDOM - VIRTUAL DOM - Created by react
+      -virtual DOM is a copy of real DOM
+      -diffing Algorithm - used to compare the virtual DOM with real DOM
+      -reconcillation - updation of real DOM as per virtual DOM
+      -entire application will not re-render with each modification.
+5) react use pure function - functions output only depend on arguments.
+6) language - JSX -its a combination of JS and  HTML 
+        -JSX is not a browser understanding language
+7) transpiling - Bebel library - converts JSX into browser understanding languages-this process of conversion is called transpliling
+8) data sharing - unidirectional - parent-child - with the help of props
+                 - props - predefined object
+
+
+STEPS TO CREATE A APPLICATION.
+--------------------------
+- New project -  npx create-react-app projectname
+  npx means node package excecutor -used to execute node based application  - this is outdated
+  
+  -npm create vite@latest projectname - new command
+  -cd projectname
+  -code .
+  -npm install -
+  -script tag edit - to open the application in default browser
+  -npm run dev - to run the application
+
+
+  files
+  ------
+  1) README.md - document related to application - this file will not run
+  2) package.json - it holds the npm configuration
+       -dependencies - holds the name of the packages installed to the application.
+  3) package-lock.json - holds the versions and some important informations regarding the installed libraries.
+  4) node_modules - it contains the copy of the installed libraries
+  5) .gitignore - name of the files that are not added to git.
+  6) vite.config.js - vite configuration
+  7) eslint.config.js - linking refers to the process of analysing code to find and fix problems such as bugs, potential errors.
+  8) index.html -
+  9) main.js - app root component
+  10) App.js - root component
+  11) index.css - global style
+  12) app.css - styles applied only to app components
+  13) public assets - media contents
+
+
+  component : basic unit of react UI
+    - export - export default componentname
+    - import - import variable from 'path'
+    - <componentname/>
+    - js code should be placed above the return function call
+    - html code should be placed inside the return function
+
+ HTML
+ -----
+ - all html content should be inside a single tag
+ - even a html fragment <> </>
+ - must be placed inside return function
+
+ css
+ ----
+1) inline
+2) external
+ - external file with extension as filename.css
+ - link - import statement
+3) css modules
+
+    
+
