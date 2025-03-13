@@ -1,0 +1,21 @@
+.reactStyle{
+    font-size: 40px;
+    color: green;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+.cssStyle{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    color: rgb(124, 28, 213);
+    font-weight: 900;
+}
+.button{
+    background-color: brown;
+    border-radius: 5px;
+    padding: 20px;
+}
+.button:hover{
+    background-color: blue;
+    
+}

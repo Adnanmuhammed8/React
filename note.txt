@@ -71,10 +71,87 @@ STEPS TO CREATE A APPLICATION.
  css
  ----
 1) inline
+      -style should be given as object
+      -syntax => style={{property:'value';}}
+      -properties with more one word must be written in camelcase - backgroundColor:'yellow'
 2) external
- - external file with extension as filename.css
- - link - import statement
+      - external file with extension as filename.css
+      - link - import statement
 3) css modules
+      - create an external file with extension as .module.css (eg: filename.module.css)
+      - it should be Created inside src folder
+      - it can be used anywhere in the project by importing this file.
+      - file will be stored into a variable while importing this file.
+      - styling is done with the help of this variable.
 
-    
+inline - particular tag
+component.css - for a particular component
+module.css - can be used for more than one component
+index.css - can be used in entire application
 
+JS
+-----
+- to place a js content in jsx - that content must be placed inside a curly bracket.
+
+  functions with Arguments
+  - should call as call back function
+      syntax
+      -------
+      ()=>{
+        functionname(arg)
+      }
+
+  Functions without Arguments
+  - while calling the function - name of the function is only used.
+
+
+  components in react
+  --------------------
+     rules to create components
+     ---------------------------
+     1) components name must start with capital letter.
+     2) extension can be js or jsx
+  1. Functional Component  // called as stateless components
+     syntax
+     -------
+     import React from 'react'                   /// for loading structure in vs code - rfce
+
+     function Example() {
+      return (
+    <div>Example</div>
+  )
+}
+
+export default Example
+
+      object destructuring - for calling only one item we dont need to 
+      
+  2. Class Component   // called as statefull components
+    syntax
+    --------
+       import React, { Component } from 'react'                  // for loading structure in vs code - rcc
+
+       export default class Random extends Component {
+      render() {
+      return (
+      <div>Random</div>
+    )
+  }
+}
+
+
+note: the created component should be connected with the root component inorder to display, it can be direct or indirect connection
+
+Object destructuring
+
+Conditional Rendering
+----------------------
+1) ternary operator  :condition?true:false
+2) truthy operator   :condition && true
+
+ state
+ ------
+ - its a predefined object to store data
+ - state is only present in class component by default
+ - when a data is changed in the state the entire component re-renders.
+ - in order to change the data in the state - call setState() method
