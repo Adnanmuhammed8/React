@@ -1,22 +1,45 @@
 import React from 'react'
 
-function Register() {
+// function Register() {
 
-    const getname = (e)=>{
-        console.log(e.target.value);
+//     const getname = (e)=>{
+//         console.log(e.target.value);
         
 
-    }
-    const getmail = (e)=>{
-        console.log(e.target.value);
+//     }
+//     const getmail = (e)=>{
+//         console.log(e.target.value);
         
 
-    }
-    const getpassword = (e)=>{
-        console.log(e.target.value);
+//     }
+//     const getpassword = (e)=>{
+//         console.log(e.target.value);
         
 
-    }
+//     }
+  function Register(){
+    const [userDetails , setUserdetails] = useState({
+        username:"",
+        email :"",
+        password :""
+        })
+  
+        const getname = (e)=>{
+        console.log(e.target.value);
+        }
+
+        const getmail = (e)=>{
+         console.log(e.target.value);
+        }
+        const getpassword = (e)=>{
+         console.log(e.target.value);
+                    
+            
+        }
+        const getDetails =(e,key)=>
+    
+
+    
   return (
     <form action="" className='mt-5 w-50 border shadow p-5 ms-5'>
         <h1 className='text-center mb-4'>Register Form</h1>

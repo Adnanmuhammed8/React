@@ -154,4 +154,51 @@ Conditional Rendering
  - its a predefined object to store data
  - state is only present in class component by default
  - when a data is changed in the state the entire component re-renders.
- - in order to change the data in the state - call setState() method
+ - in order to change the data in the state - call setState() method.
+
+ Life cycle of class component
+-----------------------------
+1) Mounting Phase - component is added to the DOM
+   - constructor() - Initialize the state in the class
+   - getDerivedStateFromProps() - It modifies the state with the values of props
+                                - It returns an object - State update
+                                - If it returns null - no state updation
+   - render() - return jsx which is the output of the component that need to be displayed in the browser.
+   - componentDidMount() - network request -api call 
+
+2) Updating Phase - Editing of the component.
+   -getDerivedStateFromProps () - It modifies the state with the values of props
+                                - It returns an object - State update
+                                - If it returns null - no state updation
+   -shouldComponentUpdate() - return true or false
+   - render() - return jsx which is the output of the component that need to be displayed in the browser.
+   - getSnapShotBeforeUpdate() - it invoke just before the DOM is updated with values from VDOM - to store information of the DOM
+   - componentDidUpdate() - invoke after the updation in the DOM . excecute any further side effect(api).
+3) Unmounting Phase - Removing the component from the DOM
+   - componentWillUnmount() - it breaks the network calls and clear the DOM
+4) Error Handling Phase () 
+   - getDerivedStateFromError()  - error UI
+   componentDidCatch() - log
+
+   HOOKS
+   ------
+   -Are Functions that allows developers to use state and life cycle features in functional components
+
+
+   -types of HOOKS
+   ----------------
+    1) predefined Hooks
+      eg; useState(),useEffect(),useRef(),useContext()  etc
+    2) custom Hooks
+
+
+    Rules to use HOOKS
+    ---------------------
+    1) import Hooks at the top of the functional components
+    2) Hooks should be called at the top portion of the inside the function
+    3) cannot invoke Hooks conditionally.
+
+
+
+    useState()
+    const [state,fnstate] = useState()
