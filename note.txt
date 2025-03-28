@@ -142,7 +142,7 @@ export default Example
 
 note: the created component should be connected with the root component inorder to display, it can be direct or indirect connection
 
-Object destructuring
+
 
 Conditional Rendering
 ----------------------
@@ -192,13 +192,145 @@ Conditional Rendering
     2) custom Hooks
 
 
+    useEffect() - is used to achieve life cycle ta an functional component
+                      - handle sideEffects    
+          syntax
+          ------
+          useEffect(()=>{
+
+          },dependency)
+
+          dependency - when to call useEffect
+          1) no dependency - useEffect will be called repeatedly
+          2) []-empty array - call when the page loads to browser
+          3) state and props[state,props] - useEffect call when the page loads to the browser and when the value of state and props change
+
+
     Rules to use HOOKS
     ---------------------
-    1) import Hooks at the top of the functional components
-    2) Hooks should be called at the top portion of the inside the function
+    1) import Hooks at the top of the functional components.
+    2) Hooks should be called at the top portion of the inside the function.
     3) cannot invoke Hooks conditionally.
 
 
 
     useState()
-    const [state,fnstate] = useState()
+    const [state,fnstate] = useState(initial,value)
+
+    
+    steps to setup path for components
+     ---------------------------------
+   1) install react-router-dom library- npm i react-router-dom 
+   2) wrap app component inside browserRouter Tag
+   3) place route tag inside routes which is used to set path
+   4) Link - Navigate from jsx
+
+   JSON SERVER
+   --------------
+   - it is a light wieght and easy to use node.js tool thaht stimulate RESTfull api using JSON file as the data Source .
+   - it is used by frontend developpers to create api without the need for a complex server side.
+
+   features
+   -------------
+   - it supports http methods like get , put ,post delete
+   - can do CRUD - CREATE ,READ ,UPDATE ,DELETE
+    
+
+    steps to create JSON SERVER
+    1) create a folder for the server.
+    2) create package.json file - npm init -y    =>command to create package.json
+    3) install json server library - npm i json-server            =>command to install json server library
+                                      npm i json-server@version 0.17.4
+
+                                      node-modules - copy of library
+                                      -package-lock.json - version
+    4) create .gitignore file
+    5) create json file to store data
+    6) create index.js file  - entry point to the server side .
+    7) edit the script key in the package.json file to run index.js file.
+
+
+
+    steps to be followed in index.js
+    1) import json-server library using require() method
+    2) create server using create() method
+    3) set port for the server to run - its work when this website is deployed  - process.env.PORT is to choose avaialble port
+    4) make the server listen to the request arriving at the port with the help listen() method
+    5) run index.json file
+
+    6) middleware - function which is capable of breaking req-res cycle
+     -default() - is a method which return middleware that is capable to parse the json data.
+    7) set up path to the db.json file using router() method
+    8) tell the servere to use the middleware and the routes
+    9) create a structure to store the data in the json file.
+
+    
+
+
+    axios
+    ------
+     Axios is a promise-based HTTP Client for node.js and the browser.
+     - .then() - response
+     - .catch() - error
+
+
+     hook - 
+          useEffect() - is used to achieve life cycle ta an functional component
+                      - handle sideEffects    
+          syntax
+          ------
+          useEffect(()=>{
+
+          },dependency)
+
+          dependency - when to call useEffect
+          1) no dependency - useEffect will be called repeatedly
+          2) []-empty array - call when the page loads to browser
+          3) state and props[state,props] - useEffect call when the page loads to the browser and when the value of state and props change
+
+
+  State Lifting
+
+
+
+
+
+
+
+Intl.DateTimeFormat
+-------------------
+  The Intl.DateTimeFormat object enables language-sensitive date and time formatting.
+  syntax
+  ---------
+  console.log(new Intl.DateTimeFormat(["ban", "id"]).format(date));
+
+
+  const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
+
+// Results below use the time zone of America/Los_Angeles (UTC-0800, Pacific Standard Time)
+
+// US English uses month-day-year order
+console.log(new Intl.DateTimeFormat("en-US").format(date));
+// "12/19/2012"
+
+// British English uses day-month-year order
+console.log(new Intl.DateTimeFormat("en-GB").format(date));
+// "19/12/2012"
+
+// Korean uses year-month-day order
+console.log(new Intl.DateTimeFormat("ko-KR").format(date));
+// "2012. 12. 19."
+
+// Arabic in most Arabic speaking countries uses real Arabic digits
+console.log(new Intl.DateTimeFormat("ar-EG").format(date));
+// "١٩‏/١٢‏/٢٠١٢"
+
+// for Japanese, applications may want to use the Japanese calendar,
+// where 2012 was the year 24 of the Heisei era
+console.log(new Intl.DateTimeFormat("ja-JP-u-ca-japanese").format(date));
+// "24/12/19"
+
+// when requesting a language that may not be supported, such as
+// Balinese, include a fallback language, in this case Indonesian
+console.log(new Intl.DateTimeFormat(["ban", "id"]).format(date));
+// "19/12/2012"

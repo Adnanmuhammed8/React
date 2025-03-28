@@ -33,9 +33,11 @@ function App() {
     <button className={style.button} onClick={clickfun}>click</button>
     <button className={style.button} onClick={()=>{clickfun2('peter')}}>click</button>
     <Example sub = {subject} sub1 = {subject1} age={26}/>
-    
-
+  
     <Random age = {26} sub={subject}/>
+
+
+    <br /> <br />
     
 
     </>
